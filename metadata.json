@@ -1,0 +1,8 @@
+{
+  "name": "Remix Interplanetary Survival Guide: Martian Map",
+  "description": "NASA Space Apps Challenge 2026 prototype by Quanta Buddies: Advanced AI-powered Martian Map, GIS layers, A* rover/EVA pathfinding, RAG mission assistant, and hazard detection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
