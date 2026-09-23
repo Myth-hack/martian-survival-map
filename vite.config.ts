@@ -11,14 +11,6 @@ export default defineConfig(() => {
         '@': path.resolve(import.meta.dirname, '.'),
       },
     },
-    build: {
-      rolldownOptions: {
-        external: ['react-is'],
-      },
-      rollupOptions: {
-        external: ['react-is'],
-      }
-    },
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
