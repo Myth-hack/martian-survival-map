@@ -1,15 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-})
-
-export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    tailwindcss()
+  ],
   build: {
     rollupOptions: {
       output: {
@@ -19,7 +16,7 @@ export default defineConfig({
             if (id.includes('recharts')) return 'vendor-recharts';
             if (id.includes('react') || id.includes('react-dom')) return 'vendor-react';
             if (id.includes('leaflet')) return 'vendor-leaflet';
-            return 'vendor'; // Groups the rest of your dependencies
+            return 'vendor'; 
           }
         }
       }
