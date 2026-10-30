@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Remix Interplanetary Survival Guide: Martian Map</title>
+    <meta name="description" content="NASA Space Apps Challenge 2026 prototype by Quanta Buddies: Advanced AI-powered Martian Map, GIS layers, A* rover/EVA pathfinding, RAG mission assistant, and hazard detection." />
+    <meta property="og:title" content="Remix Interplanetary Survival Guide: Martian Map" />
+    <meta property="og:description" content="NASA Space Apps Challenge 2026 prototype by Quanta Buddies: Advanced AI-powered Martian Map, GIS layers, A* rover/EVA pathfinding, RAG mission assistant, and hazard detection." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Suppress benign WebSocket/HMR disconnection, ResizeObserver layout loop notifications, and sandboxed iframe errors
+      function isBenignError(str) {
+        if (!str || !str.trim()) return true;
+        var lower = str.toLowerCase();
+        return (
+          lower.indexOf('websocket') !== -1 ||
+          lower.indexOf('closed without opened') !== -1 ||
+          lower.indexOf('failed to connect') !== -1 ||
+          lower.indexOf('resizeobserver') !== -1 ||
+          lower.indexOf('undelivered notifications') !== -1 ||
+          lower.indexOf('loop limit exceeded') !== -1 ||
+          lower.indexOf('script error') !== -1
+        );
+      }
+      window.addEventListener('unhandledrejection', function (event) {
+        try {
+          var str = String((event && event.reason && (event.reason.message || event.reason)) || '');
+          if (isBenignError(str)) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        } catch (e) {}
+      }, true);
+      window.addEventListener('error', function (event) {
+        try {
+          var str = String((event && (event.message || (event.error && event.error.message))) || '');
+          if (isBenignError(str)) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        } catch (e) {}
+      }, true);
+    </script>
+  </head>
+  <body class="bg-[#080B10] text-slate-100 antialiased selection:bg-red-500/30 selection:text-red-200 overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
